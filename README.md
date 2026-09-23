@@ -81,7 +81,7 @@
 
 <div align="center">
 
-<a href="https://www.denniac.it">
+<a href="https://www.denniac.dev">
   <img src="https://img.shields.io/badge/Website-58A6FF?style=for-the-badge&logo=google-chrome&logoColor=white" />
 </a>
 
