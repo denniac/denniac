@@ -5,7 +5,7 @@
 ### Full Stack Software Engineer • Javascript Lover • Linux Enthusiast
 
 <p>
-  <a href="https://www.denniac.it">
+  <a href="https://www.denniac.dev">
     <img src="https://img.shields.io/badge/Website-111111?style=for-the-badge&logo=google-chrome&logoColor=white" />
   </a>
 
@@ -14,7 +14,7 @@
   </a>
 </p>
 
-<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&duration=3000&color=58A6FF&center=true&vCenter=true&width=700&lines=Building+scalable+systems;Full+Stack+Software+Engineer;Go+%7C+Java+%7C+Angular+%7C+Node.js;Linux+Enjoyer+%F0%9F%90%A7" />
+<img src="https://readme-typing-svg.herokuapp.com?font=JetBrains+Mono&size=22&duration=3000&color=58A6FF&center=true&vCenter=true&width=700&lines=Building+scalable+systems;Full+Stack+Software+Engineer;Go+%7C+Java+%7C+Angular+%7C+Node.js;Flutter+%7C+Dart;Functional+Programming+%CE%BB;Linux+Enjoyer+%F0%9F%90%A7" />
 
 </div>
 
@@ -26,6 +26,8 @@
 💼 Full Stack Software Engineer @ AppGate
 ♟️ Building Chessgo
 🧠 Exploring Go & Agentic Programming
+λ Learning functional programming
+📱 Exploring mobile dev with Flutter
 🐧 Linux customization enthusiast
 ```
 
@@ -35,7 +37,7 @@
 
 <div align="center">
 
-<img src="https://skillicons.dev/icons?i=angular,react,astro,ts,js,java,spring,nodejs,nestjs,python,go,docker,postgres,git,linux,vscode&perline=8" />
+<img src="https://skillicons.dev/icons?i=angular,react,astro,ts,js,java,spring,nodejs,nestjs,python,go,scala,docker,postgres,flutter,dart,git,linux,vscode&perline=10" />
 
 </div>
 
@@ -70,6 +72,8 @@
 - ⚡ High-performance Go services
 - 🧩 Distributed architectures
 - 🔐 Secure authentication systems
+- λ Functional programming (Scala, purity & immutability)
+- 📱 Mobile development with Flutter & Dart
 
 ---
 
