@@ -1,0 +1,99 @@
+---
+const links = [
+  { label: "About", href: "#about" },
+  { label: "Work", href: "#work" },
+  { label: "Contact", href: "#contact" },
+];
+---
+
+<header class="nav-wrap">
+  <a class="brand" href="#top" aria-label="Denilson Anachury home">
+    <span class="brand-mark">DA</span>
+    <span>DENILSON<br /><em>ANACHURY</em></span>
+  </a>
+
+  <nav id="navLinks" class="nav-links" aria-label="Main navigation">
+    {
+      links.map(({ label, href }) => (
+        <a href={href}>{label}</a>
+      ))
+    }
+  </nav>
+
+  <a class="availability" href="#contact">
+    <span aria-hidden="true"></span>
+    Available for select projects
+  </a>
+
+  <button
+    id="menuButton"
+    class="menu-button"
+    type="button"
+    aria-label="Open menu"
+    aria-expanded="false"
+    aria-controls="navLinks"
+  >
+    <svg
+      class="icon-open"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <line x1="4" x2="20" y1="6" y2="6" />
+      <line x1="4" x2="20" y1="12" y2="12" />
+      <line x1="4" x2="20" y1="18" y2="18" />
+    </svg>
+    <svg
+      class="icon-close"
+      xmlns="http://www.w3.org/2000/svg"
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      aria-hidden="true"
+    >
+      <path d="M18 6 6 18" />
+      <path d="m6 6 12 12" />
+    </svg>
+  </button>
+</header>
+
+<script>
+  const nav = document.getElementById("navLinks");
+  const button = document.getElementById(
+    "menuButton"
+  ) as HTMLButtonElement | null;
+
+  function closeMenu() {
+    nav?.classList.remove("is-open");
+    button?.classList.remove("is-open");
+    button?.setAttribute("aria-expanded", "false");
+    button?.setAttribute("aria-label", "Open menu");
+  }
+
+  button?.addEventListener("click", () => {
+    const isOpen = nav?.classList.toggle("is-open") ?? false;
+    button.classList.toggle("is-open", isOpen);
+    button.setAttribute("aria-expanded", String(isOpen));
+    button.setAttribute("aria-label", isOpen ? "Close menu" : "Open menu");
+  });
+
+  nav?.querySelectorAll("a").forEach((link) => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu();
+  });
+</script>

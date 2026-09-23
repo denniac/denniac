@@ -1,0 +1,56 @@
+---
+const experience = [
+  {
+    company: "AppGate",
+    role: "IC2 Software Engineer",
+    period: "2022 — Present",
+    text: "Technical lead for social media intelligence, AI-driven security pipelines, reactive microservices and cloud efficiency initiatives.",
+    tags: ["Java", "Node.js", "AWS", "RabbitMQ", "Jira", "AI workflows"],
+  },
+  {
+    company: "AppGate",
+    role: "IC1 Software Engineer",
+    period: "2019 — 2022",
+    text: "Built scalable SPAs, modernized the customer portal and automated database continuity for mission-critical PostgreSQL systems.",
+    tags: ["Angular", "Scala", "Node.js", "Python", "PostgreSQL", "Jira"],
+  },
+  {
+    company: "Easy Solutions",
+    role: "Jr. Software Engineer",
+    period: "2017 — 2019",
+    text: "Designed RESTful APIs and user interfaces while collaborating with Agile teams across Java and Vaadin products.",
+    tags: ["Java", "REST APIs", "MongoDB", "Scrum"],
+  },
+];
+---
+
+<section class="experience section-pad section-line">
+  <div class="section-kicker">03 <span>Experience</span></div>
+
+  <div class="experience-grid">
+    <h2>
+      A track record<br />
+      <em>of momentum.</em>
+    </h2>
+
+    <div>
+      {
+        experience.map(({ company, role, period, text, tags }) => (
+          <article class="experience-item">
+            <div class="experience-meta">
+              <span>{company}</span>
+              <span>{period}</span>
+            </div>
+            <h3>{role}</h3>
+            <p>{text}</p>
+            <div class="tag-row">
+              {tags.map((tag) => (
+                <span>{tag}</span>
+              ))}
+            </div>
+          </article>
+        ))
+      }
+    </div>
+  </div>
+</section>

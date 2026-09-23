@@ -1,134 +1,112 @@
-<section id="contact" class="mx-auto max-w-7xl px-6 mt-32 pb-24">
-  <div
-    class="rounded-3xl border border-white/10 bg-white/5 p-8 backdrop-blur md:p-12"
-  >
-    <div class="grid gap-10 lg:grid-cols-2">
-      <div>
-        <p class="mb-3 text-sm uppercase tracking-[0.3em] text-[#29BE43]">
-          Contact
-        </p>
+---
+const email = "danachuryc@gmail.com";
+---
 
-        <h2 class="text-4xl font-bold text-white md:text-5xl">
-          Let's build something great.
-        </h2>
+<section id="contact" class="contact section-pad">
+  <div class="contact-card">
+    <p class="eyebrow">HAVE A PROJECT IN MIND?</p>
+    <h2>
+      Let's build<br />
+      <em>something that lasts.</em>
+    </h2>
+    <p class="contact-copy">
+      Whether you're solving a hard technical problem or starting from zero,
+      I'd love to hear about it.
+    </p>
 
-        <p class="mt-6 max-w-lg text-lg leading-relaxed text-gray-400">
-          Interested in collaborating, building scalable products or discussing
-          new opportunities? Feel free to reach out.
-        </p>
-
-        <div class="mt-8 flex flex-wrap gap-4">
-          <a
-            href="mailto:danachuryc@gmail.com"
-            class="rounded-2xl bg-[#29BE43] px-6 py-3 font-medium text-black transition hover:scale-[1.03] hover:bg-[#3dd95a]"
-          >
-            Contact by Email
-          </a>
-
-          <a
-            href="https://linkedin.com/in/denilson-anachury-castro/"
-            target="_blank"
-            class="rounded-2xl border border-white/10 bg-white/5 px-6 py-3 font-medium text-white transition hover:border-[#29BE43]/40 hover:bg-white/10"
-          >
-            LinkedIn
-          </a>
-
-          <a
-            href="https://x.com/Danachury"
-            target="_blank"
-            class="rounded-2xl border border-white/10 bg-white/5 px-6 py-3 font-medium text-white transition hover:border-[#29BE43]/40 hover:bg-white/10"
-          >
-            Twitter / X
-          </a>
-        </div>
-      </div>
-
-      <form id="contactForm" class="space-y-5">
-        <div>
-          <label class="mb-2 block text-sm text-gray-400">Name</label>
-          <input
-            name="name"
-            type="text"
-            placeholder="Your name"
-            class="w-full rounded-2xl border border-white/10 bg-[#10141E] px-5 py-4 text-white outline-none transition focus:border-[#29BE43]/50"
-          />
-        </div>
-
-        <div>
-          <label class="mb-2 block text-sm text-gray-400">Email</label>
-          <input
-            name="email"
-            type="email"
-            placeholder="your@email.com"
-            class="w-full rounded-2xl border border-white/10 bg-[#10141E] px-5 py-4 text-white outline-none transition focus:border-[#29BE43]/50"
-          />
-        </div>
-
-        <div>
-          <label class="mb-2 block text-sm text-gray-400">Message</label>
-          <textarea
-            name="message"
-            rows="6"
-            placeholder="Tell me about your project..."
-            class="w-full rounded-2xl border border-white/10 bg-[#10141E] px-5 py-4 text-white outline-none transition focus:border-[#29BE43]/50"
-          ></textarea>
-        </div>
-
-        <button
-          type="submit"
-          class="w-full rounded-2xl bg-[#29BE43] px-6 py-4 font-semibold text-black transition hover:scale-[1.01] hover:bg-[#3dd95a]"
+    <div class="contact-actions">
+      <a class="button button-light" href={`mailto:${email}`}>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          width="16"
+          height="16"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
         >
-          Send Message
-        </button>
-      </form>
+          <rect width="20" height="16" x="2" y="4" rx="2" />
+          <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
+        </svg>
+        Send me a note
+      </a>
+
+      <button
+        id="copyButton"
+        class="copy-button"
+        type="button"
+        data-email={email}
+      >
+        <svg
+          class="icon-copy"
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          aria-hidden="true"
+        >
+          <rect width="14" height="14" x="8" y="8" rx="2" ry="2" />
+          <path d="M4 16c-1.1 0-2-.9-2-2V4c0-1.1.9-2 2-2h10c1.1 0 2 .9 2 2" />
+        </svg>
+        <svg
+          class="icon-check"
+          xmlns="http://www.w3.org/2000/svg"
+          width="15"
+          height="15"
+          viewBox="0 0 24 24"
+          fill="none"
+          stroke="currentColor"
+          stroke-width="2"
+          stroke-linecap="round"
+          stroke-linejoin="round"
+          style="display: none"
+          aria-hidden="true"
+        >
+          <path d="M20 6 9 17l-5-5" />
+        </svg>
+        <span class="copy-label">{email}</span>
+      </button>
     </div>
   </div>
 </section>
 
 <script>
-  import { successToast, errorToast } from "../lib/toast";
+  const button = document.querySelector<HTMLButtonElement>("#copyButton");
+  const email = button?.dataset.email ?? "";
 
-  const form: HTMLFormElement | null = document.querySelector("#contactForm");
+  function renderCopied() {
+    const copyIcon = button?.querySelector<SVGElement>(".icon-copy");
+    const checkIcon = button?.querySelector<SVGElement>(".icon-check");
+    const label = button?.querySelector<HTMLSpanElement>(".copy-label");
 
-  form?.addEventListener("submit", async (event) => {
-    event.preventDefault();
+    copyIcon?.style.setProperty("display", "none");
+    checkIcon?.style.setProperty("display", "block");
+    if (label) label.textContent = "Copied";
+  }
 
-    const submitButton = form.querySelector("button");
+  function renderEmail() {
+    const copyIcon = button?.querySelector<SVGElement>(".icon-copy");
+    const checkIcon = button?.querySelector<SVGElement>(".icon-check");
+    const label = button?.querySelector<HTMLSpanElement>(".copy-label");
 
-    submitButton!.disabled = true;
-    submitButton!.textContent = "Sending...";
+    copyIcon?.style.setProperty("display", "block");
+    checkIcon?.style.setProperty("display", "none");
+    if (label) label.textContent = email;
+  }
 
-    const formData = new FormData(form);
-
-    const body = {
-      name: formData.get("name"),
-      email: formData.get("email"),
-      message: formData.get("message"),
-    };
-
-    try {
-      const response = await fetch("/_actions/sendEmail", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(body),
-      });
-
-      const result = await response.json();
-
-      if (!response.ok) {
-        throw new Error(result.error?.message || "Something went wrong");
-      }
-
-      successToast("Message sent successfully! I will get back to you soon.");
-      form.reset();
-    } catch (error) {
-      errorToast("Failed to send message. Please try again later.");
-      form.reset();
-    } finally {
-      submitButton!.disabled = false;
-      submitButton!.textContent = "Send Message";
+  button?.addEventListener("click", async () => {
+    if (navigator.clipboard) {
+      await navigator.clipboard.writeText(email);
     }
+    renderCopied();
+    window.setTimeout(renderEmail, 1800);
   });
 </script>

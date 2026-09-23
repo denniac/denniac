@@ -15,10 +15,10 @@
 
 ## Gotchas
 
-- **Missing `RESEND_API_KEY` env var breaks the contact action.** `src/actions/index.ts` constructs `new Resend(...)` at module scope, so the server refuses the `/_actions/sendEmail` route (called by the Contact form) without `RESEND_API_KEY` in `portfolio/.env`. `.env` is gitignored; copy it from a teammate/CI.
+- **Missing `RESEND_API_KEY` env var breaks the `sendEmail` action.** `src/actions/index.ts` constructs `new Resend(...)` at module scope, so the server refuses the `/_actions/sendEmail` route without `RESEND_API_KEY` in `portfolio/.env`. The Contact section currently uses a mailto + copy-email button (no form), so the action is unused — leave it intact. `.env` is gitignored; copy it from a teammate/CI.
 - `.astro/` is a gitignored, generated directory with `types.d.ts` referenced by `tsconfig.json`. Recreated on `astro dev`/`build`; don't hand-edit it.
-- Tailwind CSS v4 is wired through the `@tailwindcss/vite` plugin in `astro.config.mjs` — there is **no** `tailwind.config.*`. The single `@import "tailwindcss";` lives in `src/styles/global.css`.
-- Site theme is hardcoded Tailwind arbitrary values: background `#10141E`, accent green `#29BE43`. Keep using these arbitrary value tokens for consistency.
+- Tailwind CSS v4 is wired through the `@tailwindcss/vite` plugin in `astro.config.mjs` — there is **no** `tailwind.config.*`. The single `@import "tailwindcss";` lives at the top of `src/styles/global.css` (Tailwind is used for preflight/reset + a few utilities like the skip link).
+- Site theme lives as plain CSS custom properties in `:root` inside `src/styles/global.css`: background `#0b1713`, foreground `#edf3e8`, primary lime `#b6d93b`, muted `#92a39a`, border `rgba(218,240,203,.14)`, contact background `#163323`. The layout is driven by the hand-written theme classes in that file (`.site-shell`, `.nav-wrap`, `.hero`, `.section-kicker`, `.skill-cloud`, etc.). Keep editing those classes — do not reintroduce Tailwind utility classes for the layout.
 
 ## Deploy
 

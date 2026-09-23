@@ -1,0 +1,71 @@
+---
+const projects = [
+  {
+    number: "01",
+    title: "Security pipeline",
+    description:
+      "Proactive vulnerability detection powered by AI-assisted engineering workflows.",
+    stack: "Claude Code · CI/CD · Security",
+  },
+  {
+    number: "02",
+    title: "Reactive services",
+    description:
+      "High-availability event-driven microservices that remove synchronous bottlenecks.",
+    stack: "Java 8–21 · RabbitMQ · AWS",
+  },
+  {
+    number: "03",
+    title: "Cloud continuity",
+    description:
+      "Automated backup integrity and recovery for mission-critical databases.",
+    stack: "Python · Lambda · PostgreSQL",
+  },
+];
+---
+
+<section id="work" class="work section-pad section-line">
+  <div class="section-kicker">02 <span>Selected work</span></div>
+
+  <div class="work-heading">
+    <h2>
+      Things I've built<br />
+      <em>&amp; learned from.</em>
+    </h2>
+    <p class="muted-copy">
+      A few chapters from the last few years of building reliable software,
+      leading initiatives and making systems safer.
+    </p>
+  </div>
+
+  <div class="project-list">
+    {
+      projects.map(({ number, title, description, stack }) => (
+        <article class="project-card">
+          <span class="project-number">{number}</span>
+          <div>
+            <h3>{title}</h3>
+            <p>{description}</p>
+            <span class="project-stack">{stack}</span>
+          </div>
+          <svg
+            class="project-arrow"
+            xmlns="http://www.w3.org/2000/svg"
+            width="20"
+            height="20"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            stroke-width="2"
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            aria-hidden="true"
+          >
+            <path d="M7 7h10v10" />
+            <path d="M7 17 17 7" />
+          </svg>
+        </article>
+      ))
+    }
+  </div>
+</section>

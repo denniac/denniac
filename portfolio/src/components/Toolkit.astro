@@ -1,0 +1,48 @@
+---
+const skills = [
+  "Java / Spring Boot",
+  "Node.js / Express / NestJS",
+  "TypeScript / JavaScript",
+  "Python / Django",
+  "Angular",
+  "Next.js",
+  "Flutter",
+  "Scala",
+  "AWS (S3 / Lambda)",
+  "Kafka",
+  "RabbitMQ",
+  "PostgreSQL / MongoDB",
+  "Cloudflare",
+  "CI/CD",
+  "REST APIs",
+  "Microservices",
+  "Event-Driven Architecture",
+  "BFF Layers",
+  "Agentic Programming",
+  "Agile / Scrum",
+  "TDD",
+];
+---
+
+<section class="skills section-pad section-line">
+  <div class="section-kicker">04 <span>Toolkit</span></div>
+
+  <div class="skills-inner">
+    <h2>
+      The tools<br />
+      <em>in my hands.</em>
+    </h2>
+
+    <div class="skill-cloud">
+      {
+        skills.map((skill, index) => (
+          <span
+            class={index === 0 ? "skill-pill featured" : "skill-pill"}
+          >
+            {skill}
+          </span>
+        ))
+      }
+    </div>
+  </div>
+</section>
